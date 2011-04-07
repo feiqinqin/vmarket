@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title></title>
+    $control.setTemplate("vmcommon/p/3.0/c2c/common/assets.vm").setParameter('compatible', "true").setParameter('jsLib', "aio").setParameter('js', 'ks-core').setParameter('appendStyle', "")
+##    <link type="text/css" href="http://assets.daily.taobao.net/apps/trademanager/1.0/common.css')" rel="stylesheet"/>
+##    <link type="text/css" href="http://assets.daily.taobao.net/apps/trademanager/1.0/order_detail.css" rel="stylesheet"/>
+##    <style>#header .wrap-box { margin-top:-78px !important; }</style>
+##    <link type="text/css" href="http://assets.daily.taobao.net/apps/trademanager/1.0/card_code.css'" rel="stylesheet"/>
+</head>
+<body id="trade-order-detail">
+<div id="page">
+    $control.setTemplate("vmcommon/p/3.0/c2c/common/header.vm").setParameter('isSubUser', true)
+    <div id="content">
+    $screen_placeholder
+    </div>
+    $control.setTemplate("vmcommon/p/3.0/c2c/common/footer.vm").setParameter('CP', true).setParameter('footerStyle', "")
+</div>
+
+</body>
+</html>
