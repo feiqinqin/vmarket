@@ -1,0 +1,10 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>$page_title</title>
+    <meta charset="gbk">
+</head>
+<body>
+    $screen_content
+  </body>
+</html>

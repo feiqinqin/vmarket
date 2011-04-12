@@ -1,0 +1,189 @@
+##设置title
+###set( $page_title = "Hello" )
+##使用根目录的layout
+##set($layout = "default.vm")
+
+<style type="text/css">
+    ul, p, table, ul, dl, div, span {
+        line-height: 1.3em;
+    }
+
+    li {
+        display: list-item;
+    }
+
+    a:link, a:visited, a:active, a:hover {
+        color: #525D76;
+    }
+
+    h1, h2 {
+        padding: 4px 4px 4px 6px;
+        border: none;
+        background-color: #525D76;
+        color: white;
+        font-size: 14pt;
+        font-weight: normal;
+    }
+</style>
+<h1>自定义的tools</h1>
+<ul>
+    <li>tmsTool：用于tms文件的引入</li>
+    <li>control：用于兼容webx的control</li>
+</ul>
+<h1>内置的tools</h1>
+<ul>
+    <li>
+        <a href="http://velocity.apache.org/tools/releases/2.0/javadoc/org/apache/velocity/tools/generic/AlternatorTool.html">AlternatorTool</a>
+
+        - For creating
+        <a href="http://velocity.apache.org/tools/releases/2.0/javadoc/org/apache/velocity/tools/generic/Alternator.html">Alternator</a>
+        s
+
+        to easily alternate over a set of values.
+    </li>
+
+    <li>
+        <a href="http://velocity.apache.org/tools/releases/2.0/javadoc/org/apache/velocity/tools/generic/ClassTool.html">ClassTool</a>
+
+        - For simplifying reflective lookup of information about
+
+        Classes and their fields, methods and constructors.
+    </li>
+    <li>
+        <a href="http://velocity.apache.org/tools/releases/2.0/javadoc/org/apache/velocity/tools/generic/ContextTool.html">ContextTool</a>
+
+        - For convenient access to Context data and meta-data.
+    </li>
+    <li>
+        <a href="http://velocity.apache.org/tools/releases/2.0/javadoc/org/apache/velocity/tools/generic/ConversionTool.html">ConversionTool</a>
+
+        - For converting String values to richer object types.
+    </li>
+    <li>
+        <a href="http://velocity.apache.org/tools/releases/2.0/javadoc/org/apache/velocity/tools/generic/DateTool.html">DateTool</a>
+        <a href="http://velocity.apache.org/tools/releases/2.0/javadoc/org/apache/velocity/tools/generic/ComparisonDateTool.html">ComparisonDateTool</a>
+        - For manipulating, formatting, and comparing dates.
+    </li>
+    <li>
+        <a href="http://velocity.apache.org/tools/releases/2.0/javadoc/org/apache/velocity/tools/generic/DisplayTool.html">DisplayTool</a>
+
+        - For controlling display of references (e.g. truncating values,
+
+        "pretty printing" lists, and displaying alternates when a reference is null).
+    </li>
+    <li>
+        <a href="http://velocity.apache.org/tools/releases/2.0/javadoc/org/apache/velocity/tools/generic/EscapeTool.html">EscapeTool</a>
+
+        - For common
+        escaping needs in Velocity templates (e.g. escaping
+
+        html, xml, javascript etc.)
+    </li>
+    <li>
+        <a href="http://velocity.apache.org/tools/releases/2.0/javadoc/org/apache/velocity/tools/generic/FieldTool.html">FieldTool</a>
+
+        - For (easy) access to static fields in a class, such as string
+
+        constants.
+    </li>
+<li>
+    <a href="http://velocity.apache.org/tools/releases/2.0/javadoc/org/apache/velocity/tools/generic/LoopTool.html">LoopTool</a>
+
+    - A convenience tool to use with \#foreach loops. It wraps a list
+
+    with a custom iterator to provide greater control, allowing loops
+
+    to end early, skip ahead and more.
+</li>
+    <li>
+        <a href="http://velocity.apache.org/tools/releases/2.0/javadoc/org/apache/velocity/tools/generic/LinkTool.html">LinkTool</a>
+
+        - For creating and manipulating URIs and URLs. The API for this tool is
+
+        designed to closely resemble that of the VelocityView tool of the same name.
+    </li>
+    <li>
+        <a href="http://velocity.apache.org/tools/releases/2.0/javadoc/org/apache/velocity/tools/generic/ListTool.html">ListTool</a>
+
+        - For working with arrays and lists, treats both transparently
+
+        the same.
+    </li>
+    <li>
+        <a href="http://velocity.apache.org/tools/releases/2.0/javadoc/org/apache/velocity/tools/generic/MathTool.html">MathTool</a>
+
+        - For performing math functions.
+    </li>
+    <li>
+        <a href="http://velocity.apache.org/tools/releases/2.0/javadoc/org/apache/velocity/tools/generic/NumberTool.html">NumberTool</a>
+
+        - For formatting and converting numbers.
+    </li>
+    <li>
+        <a href="http://velocity.apache.org/tools/releases/2.0/javadoc/org/apache/velocity/tools/generic/RenderTool.html">RenderTool</a>
+
+        - To evaluate and render arbitrary strings of VTL, including
+
+        recursive rendering.
+    </li>
+    <li>
+        <a href="http://velocity.apache.org/tools/releases/2.0/javadoc/org/apache/velocity/tools/generic/ResourceTool.html">ResourceTool</a>
+
+        - For simplified access to ResourceBundles for
+
+        internationalization or other dynamic content needs.
+    </li>
+    <li>
+        <a href="http://velocity.apache.org/tools/releases/2.0/javadoc/org/apache/velocity/tools/generic/SortTool.html">SortTool</a>
+
+        - Used to sort collections (or arrays, iterators, etc) on
+
+        any arbitary set of properties exposed by the objects contained
+
+        within the collection.
+    </li>
+    <li>
+        <a href="http://velocity.apache.org/tools/releases/2.0/javadoc/org/apache/velocity/tools/generic/XmlTool.html">XmlTool</a>
+
+        - For reading/navigating XML files. This uses dom4j under the
+
+        covers and provides complete XPath support.
+    </li>
+</ul>
+<ul>
+    <li>
+        <a href="javadoc/org/apache/velocity/tools/view/AbstractSearchTool.html">AbstractSearchTool</a>
+        - For doing "searching" and robust pagination of search
+        results. Requires you to create a subclass.
+    </li>
+    <li>
+        <a href="javadoc/org/apache/velocity/tools/view/BrowserTool.html">BrowserTool</a>
+        - For identifying the browser and features thereof requesting
+        the template.
+    </li>
+    <li>
+        <a href="javadoc/org/apache/velocity/tools/view/CookieTool.html">CookieTool</a>
+        - For convenient cookie access and creation.
+    </li>
+    <li>
+        <a href="javadoc/org/apache/velocity/tools/view/ImportTool.html">ImportTool</a>
+        - For pulling down textual content from a URL.
+    </li>
+    <li>
+        <a href="javadoc/org/apache/velocity/tools/view/LinkTool.html">LinkTool</a>
+        - For easy building of URLs (both relative or absolute).
+    </li>
+    <li>
+        <a href="javadoc/org/apache/velocity/tools/view/PagerTool.html">PagerTool</a>
+        - For doing request-based pagination of items in an
+        arbitrary list.
+    </li>
+    <li>
+        <a href="javadoc/org/apache/velocity/tools/view/ParameterTool.html">ParameterTool</a>
+        - For easy retrieval and parsing of ServletRequest parameters.
+    </li>
+    <li>
+        <a href="javadoc/org/apache/velocity/tools/view/ViewContextTool.html">ViewContextTool</a>
+        - For convenient access to ViewContext data and meta-data.
+    </li>
+</ul>

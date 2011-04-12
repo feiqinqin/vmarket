@@ -5,37 +5,32 @@
         http://java.sun.com/xml/ns/j2ee  http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd
     ">
 
-    <!-- 初始化日志系统 -->
-    <listener>
-        <listener-class>com.alibaba.citrus.logconfig.LogConfiguratorListener</listener-class>
-    </listener>
+    <!--<filter>-->
+        <!--<filter-name>velocity</filter-name>-->
+        <!--<filter-class>org.apache.velocity.tools.view.VelocityViewFilter</filter-class>-->
+    <!--</filter>-->
 
-    <!-- 装载/WEB-INF/webx.xml, /WEB-INF/webx-*.xml -->
-    <listener>
-        <listener-class>com.alibaba.citrus.webx.context.WebxContextLoaderListener</listener-class>
-    </listener>
+    <!--<filter-mapping>-->
+        <!--<filter-name>velocity</filter-name>-->
+        <!--<url-pattern>*.vm</url-pattern>-->
+    <!--</filter-mapping>-->
 
-    <filter>
-        <filter-name>mdc</filter-name>
-        <filter-class>com.alibaba.citrus.webx.servlet.SetLoggingContextFilter</filter-class>
-    </filter>
+    <servlet>
+        <servlet-name>velocityLayoutServlet</servlet-name>
+        <servlet-class>org.apache.velocity.tools.view.VelocityLayoutServlet</servlet-class>
+        <init-param>
+            <param-name>org.apache.velocity.tools.loadDefaults</param-name>
+            <param-value>false</param-value>
+        </init-param>
+    </servlet>
 
-    <filter>
-        <filter-name>webx</filter-name>
-        <filter-class>com.alibaba.citrus.webx.servlet.WebxFrameworkFilter</filter-class>
-    </filter>
-
-    <filter-mapping>
-        <filter-name>mdc</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
-
-    <filter-mapping>
-        <filter-name>webx</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
+    <servlet-mapping>
+        <servlet-name>velocityLayoutServlet</servlet-name>
+        <url-pattern>*.vm</url-pattern>
+    </servlet-mapping>
 
     <welcome-file-list>
+        <welcome-file>index.vm</welcome-file>
         <welcome-file>index.html</welcome-file>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
