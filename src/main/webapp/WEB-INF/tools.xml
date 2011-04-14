@@ -18,8 +18,6 @@
 
   -->
 <tools>
-    <data key="uiModule">http://assets.daily.taobao.net</data>
-
     <toolbox scope="application">
         <tool class="org.apache.velocity.tools.generic.AlternatorTool"/>
         <tool class="org.apache.velocity.tools.generic.ClassTool"/>
@@ -53,12 +51,19 @@
         <tool class="org.apache.velocity.tools.view.ParameterTool"/>
         <tool class="org.apache.velocity.tools.view.ViewContextTool"/>
         <tool class="org.apache.velocity.tools.generic.ResourceTool"/>
-
+    </toolbox>
+    <toolbox scope="session" createSession="false">
+        <tool class="org.apache.velocity.tools.view.BrowserTool"/>
+    </toolbox>
+    <toolbox scope="request">
         <!-- for custom tools -->
         <tool class="web.tools.TmsTool"/>
         <tool class="web.tools.ControlTool"/>
     </toolbox>
-    <toolbox scope="session" createSession="false">
-        <tool class="org.apache.velocity.tools.view.BrowserTool"/>
+
+    <toolbox scope="application">
+        <tool class="web.tools.StringUtil"/>
+        <tool class="web.tools.UiModuleTool"/>
+        <tool class="web.tools.SecurityUtil"/>
     </toolbox>
 </tools>

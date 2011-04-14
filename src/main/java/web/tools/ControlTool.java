@@ -253,7 +253,7 @@ public class ControlTool extends SafeConfig {
 
     private String render() {
         if(this.template == null || this.template.isEmpty()) {
-            return "";
+            return "$control.setTemplate(null)";
         }
         debug("render once :" + this.template);
         VelocityContext context = new VelocityContext(this.context);
@@ -267,37 +267,40 @@ public class ControlTool extends SafeConfig {
                 File file = new File(this.template);
                 if(file.exists()) {
                     BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
-                    String line;
-                    while((line = bufferedReader.readLine()) != null) {
-                        builder.append(line);
+                    int i;
+                    while ((i = bufferedReader.read()) != -1) {
+                        builder.append((char) i);
                     }
                     bufferedReader.close();
                 } else {
-                    return "";
+                    return "$control.setTemplate£¨" +this.template + ")";
                 }
             } else {
+                if(!this.template.startsWith("/")) {
+                    this.template = "/" + this.template;
+                }
                 String realPath = this.application.getRealPath("/");
                 File file = new File(realPath + this.template);
                 if(file.exists()) {
                     BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
-                    String line;
-                    while((line = bufferedReader.readLine()) != null) {
-                        builder.append(line);
+                    int i;
+                    while ((i = bufferedReader.read()) != -1) {
+                        builder.append((char) i);
                     }
                     bufferedReader.close();
                 } else {
-                    return "";
+                    return "$control.setTemplate£¨" +this.template + ")";
                 }
             }
 
             return recurse(context, builder.toString());
         } catch (Exception e) {
-
+            debug(e.toString());
         } finally {
             contextParameters.clear();
             this.template = null;
         }
-        return "";
+        return "$control.setTemplate£¨" +this.template + ")";
     }
 
 }
